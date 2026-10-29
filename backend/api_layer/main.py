@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from api_layer.routes import chat
+from api_layer.routes import chat, chat_with_user_level_memory
 
 app = FastAPI(title="Simple AI Chatbot API", version="1.0.0")
 
@@ -15,6 +15,7 @@ app.add_middleware(
 )
 
 app.include_router(chat.router)
+app.include_router(chat_with_user_level_memory.router)
 
 
 @app.get("/", tags=["health"])
