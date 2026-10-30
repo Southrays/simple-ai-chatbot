@@ -8,3 +8,4 @@ uvicorn[standard]
 httpx
 sqlalchemy
 pytest
+langgraph-checkpoint-sqlite
